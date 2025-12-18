@@ -35,6 +35,8 @@ A robust Android music player application built with **Kotlin Multiplatform (KMP
 ## 📦 Deliverables
 The compiled APK file is included in this repository as `sonik-debug.apk` for quick testing.
 
+---
+
 This is a Kotlin Multiplatform project targeting Android, iOS, Desktop (JVM).
 
 * [/composeApp](./composeApp/src) is for code that will be shared across your Compose Multiplatform applications.
