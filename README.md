@@ -1,3 +1,40 @@
+# Sonik - Modern KMP Music Player 🎵
+
+A robust Android music player application built with **Kotlin Multiplatform (KMP)** and **Jetpack Compose**. This project demonstrates proficiency in modern Android architecture, reactive UI, and clean code principles.
+
+## 📱 Tech Stack & Architecture
+* **Architecture:** MVVM (Model-View-ViewModel) with Clean Architecture principles.
+* **UI:** Jetpack Compose (Material 3) — chosen for its declarative nature and superior state management over XML/RecyclerView.
+* **Networking:** Ktor (Shared Multiplatform Module) — isolates API logic for potential iOS reusability.
+* **Concurrency:** Kotlin Coroutines & StateFlow.
+* **Media:** Android MediaPlayer with Lifecycle-aware state handling.
+* **Image Loading:** Coil.
+
+## 🚀 Features Implemented
+* **Multi-mode Sorting:** Sort tracks by **Name (A-Z)** or **Duration**.
+* **Smart Audio Player:** * Real-time progress bar and duration timer.
+    * Next/Previous track functionality.
+    * Buffering state indication (loading spinner in place of play button).
+* **Resilient Networking:**
+    * Graceful error handling with "Retry" functionality.
+    * Specific handling for stream failures (e.g., network drop during playback).
+* **Clean Architecture:** Data layer (API models & Repository) is separated into the `commonMain` shared module.
+
+## 🛠 decisions & Assumptions
+* **API Choice:** I chose the **Jamendo API** because it provides a reliable, open-source music catalog with rich metadata (thumbnails, duration, artist names) and requires no complex OAuth for demo purposes.
+* **UI Framework:** While the prompt mentioned `RecyclerView`, I opted for **Jetpack Compose** (`LazyColumn`). This decision demonstrates familiarity with the modern industry standard for Android UI, ensuring the code is future-proof and more readable.
+* **Assumption:** The user has an active internet connection. If not, the app displays a user-friendly error screen rather than crashing.
+
+## ⚙️ How to Run
+1.  Clone this repository.
+2.  Open the project in **Android Studio** (Ladybug or newer recommended).
+3.  Sync Gradle (ensure KMP plugin support is active).
+4.  Run the `composeApp` configuration on an Emulator or Physical Device.
+    * *Note:* No API Key configuration is needed; the demo Client ID is embedded for review convenience.
+
+## 📦 Deliverables
+The compiled APK file is included in this repository as `sonik-debug.apk` for quick testing.
+
 This is a Kotlin Multiplatform project targeting Android, iOS, Desktop (JVM).
 
 * [/composeApp](./composeApp/src) is for code that will be shared across your Compose Multiplatform applications.
