@@ -22,7 +22,7 @@ A robust Android music player application built with **Kotlin Multiplatform (KMP
 
 ## 🛠 decisions & Assumptions
 * **API Choice:** I chose the **Jamendo API** because it provides a reliable, open-source music catalog with rich metadata (thumbnails, duration, artist names) and requires no complex OAuth for demo purposes.
-* **UI Framework:** While the prompt mentioned `RecyclerView`, I opted for **Jetpack Compose** (`LazyColumn`). This decision demonstrates familiarity with the modern industry standard for Android UI, ensuring the code is future-proof and more readable.
+* **UI Framework:** I opted for **Jetpack Compose**. This decision demonstrates familiarity with the modern industry standard for Android UI, ensuring the code is future-proof and more readable.
 * **Assumption:** The user has an active internet connection. If not, the app displays a user-friendly error screen rather than crashing.
 
 ## ⚙️ How to Run
