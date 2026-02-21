@@ -37,8 +37,6 @@ kotlin {
 
             implementation(libs.ktor.client.android) // Android specific network engine
             implementation(libs.kotlinx.coroutines.android)
-            implementation(libs.coil.compose) // Loading images
-            implementation(libs.androidx.lifecycle.viewmodel)
             implementation(libs.androidx.lifecycle.compose)
         }
         commonMain.dependencies {
@@ -56,6 +54,9 @@ kotlin {
             implementation(libs.ktor.client.content.negotiation) // JSON parsing plugin
             implementation(libs.ktor.serialization.json) // JSON serialization
             implementation(libs.kotlinx.coroutines.core) // Async
+            
+            implementation(libs.coil.compose) // KMP Image loading
+            implementation(libs.coil.network.ktor3)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)

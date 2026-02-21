@@ -3,14 +3,14 @@ package com.seenubommisetti.sonik.player
 import android.media.AudioAttributes
 import android.media.MediaPlayer
 
-class AudioPlayer {
+actual class AudioPlayer actual constructor() {
     private var mediaPlayer: MediaPlayer? = null
 
-    var onIsPlayingChanged: ((Boolean) -> Unit)? = null
+    actual var onIsPlayingChanged: ((Boolean) -> Unit)? = null
 
-    var onError: ((String) -> Unit)? = null
+    actual var onError: ((String) -> Unit)? = null
 
-    fun playUrl(url: String) {
+    actual fun playUrl(url: String) {
 
         stop()
 
@@ -59,7 +59,7 @@ class AudioPlayer {
         }
     }
 
-    fun togglePlayPause() {
+    actual fun togglePlayPause() {
         mediaPlayer?.let {
             if (it.isPlaying) {
                 it.pause()
@@ -71,7 +71,7 @@ class AudioPlayer {
         }
     }
 
-    fun getCurrentPosition(): Int {
+    actual fun getCurrentPosition(): Int {
         return try {
             mediaPlayer?.currentPosition ?: 0
         } catch (e: Exception) {
@@ -79,7 +79,7 @@ class AudioPlayer {
         }
     }
 
-    fun stop() {
+    actual fun stop() {
         mediaPlayer?.release()
         mediaPlayer = null
         onIsPlayingChanged?.invoke(false)
