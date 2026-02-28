@@ -38,6 +38,9 @@ kotlin {
             implementation(libs.ktor.client.android) // Android specific network engine
             implementation(libs.kotlinx.coroutines.android)
             implementation(libs.androidx.lifecycle.compose)
+            
+            implementation(project.dependencies.platform(libs.koin.bom))
+            implementation(libs.koin.android)
         }
         commonMain.dependencies {
             implementation(compose.runtime)
@@ -57,6 +60,11 @@ kotlin {
             
             implementation(libs.coil.compose) // KMP Image loading
             implementation(libs.coil.network.ktor3)
+            
+            implementation(project.dependencies.platform(libs.koin.bom))
+            implementation(libs.koin.core)
+            implementation(libs.koin.compose)
+            implementation(libs.koin.compose.viewmodel)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)

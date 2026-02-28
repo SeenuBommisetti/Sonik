@@ -9,10 +9,10 @@ import com.seenubommisetti.sonik.model.Track
 import com.seenubommisetti.sonik.network.MusicRepository
 import com.seenubommisetti.sonik.player.AudioPlayer
 
-class MusicViewModel : ViewModel() {
-
-    private val repository = MusicRepository()
-    private val player = AudioPlayer()
+class MusicViewModel(
+    private val repository: MusicRepository,
+    private val player: AudioPlayer
+) : ViewModel() {
 
     private val _tracks = MutableStateFlow<List<Track>>(emptyList())
     val tracks = _tracks.asStateFlow()

@@ -52,16 +52,16 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
-import org.jetbrains.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
-import androidx.lifecycle.viewmodel.compose.viewModel
+import org.koin.compose.viewmodel.koinViewModel
 import coil3.compose.AsyncImage
 import com.seenubommisetti.sonik.model.Track
+import androidx.compose.ui.unit.dp
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun TrackListScreen() {
-    val viewModel: MusicViewModel = viewModel()
+    val viewModel = koinViewModel<MusicViewModel>()
 
     val tracks by viewModel.tracks.collectAsState()
     val currentTrack by viewModel.currentTrack.collectAsState()
