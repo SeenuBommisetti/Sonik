@@ -1,0 +1,19 @@
+CREATE TABLE TrackEntity (
+    id TEXT NOT NULL PRIMARY KEY,
+    name TEXT NOT NULL,
+    artistName TEXT NOT NULL,
+    duration INTEGER NOT NULL,
+    image TEXT NOT NULL,
+    audio TEXT NOT NULL
+);
+
+selectAll:
+SELECT *
+FROM TrackEntity;
+
+insertTrack:
+INSERT OR REPLACE INTO TrackEntity(id, name, artistName, duration, image, audio)
+VALUES (?, ?, ?, ?, ?, ?);
+
+deleteAll:
+DELETE FROM TrackEntity;

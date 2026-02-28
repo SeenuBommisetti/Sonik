@@ -65,14 +65,16 @@ class MusicViewModel(
             _errorMessage.value = null
 
             try {
-                val result = repository.fetchTracks()
-                if (result.isNotEmpty()) {
-                    _tracks.value = result
-                } else {
-                    _errorMessage.value = "Unable to load songs. Check your internet connection."
+                repository.fetchTracks().collect { result ->
+                    if (result.isNotEmpty()) {
+                        _tracks.value = result
+                    }
+                    _isLoading.value = false
                 }
             } catch (e: Exception) {
-                _errorMessage.value = "An error occurred: ${e.message}"
+                if (_tracks.value.isEmpty()) {
+                    _errorMessage.value = "An error occurred: ${e.message}"
+                }
             } finally {
                 _isLoading.value = false
             }
